@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+
+</head>
+
+<body>
+    <div class="login">
+        <h1>Predict Stroke Status</h1>
+
+        {{ prediction_text }}
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <div>
+            <form action="{{ url_for('predict')}}" method="post">
+                <input type="text" name="SEX" placeholder="SEX" required="required" />
+                <input type="text" name="AGE" placeholder="AGE" required="required" />
+                <input type="text" name="sbp" placeholder="sbp" required="required" />
+                <input type="text" name="dbp" placeholder="dbp" required="required" />
+                <input type="text" name="bw" placeholder="bw" required="required" />
+                <input type="text" name="Hemiparesis" placeholder="Hemiparesis" required="required" />
+                <input type="text" name="Hemianesthesia" placeholder="Hemianesthesia" required="required" />
+                <input type="text" name="prev_stroke" placeholder="prev_stroke" required="required" />
+                <input type="text" name="ckd" placeholder="ckd" required="required" />
+                <input type="text" name="anticoag" placeholder="anticoag" required="required" />
+                <input type="text" name="dysarthria" placeholder="dysarthria" required="required" />
+                <input type="text" name="aphasia" placeholder="aphasia" required="required" />
+                <input type="text" name="smoking" placeholder="smoking" required="required" />
+                <input type="text" name="nihss_combind" placeholder="nihss_combind" required="required" />
+                <input type="text" name="ich_sym" placeholder="ich_sym" required="required" />
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+  
